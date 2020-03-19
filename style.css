@@ -1,24 +1,113 @@
 /* CSS Document */
+/*----animation for the front---*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*--second thing--*/
+.fly-in-text {
+  white-space:nowrap; 
+  list-style: none;
+  font-weight: bolder;
+  position: absolute;
+  left: 31%;
+  top: 45%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.fly-in-text li {
+  display: inline-block;
+  margin-right: px;
+  font-family: 'montserrat', sans-serif;  
+  font-weight: bolder;
+  font-size: 135px;
+  color: white;
+  opacity: 0.8 ;
+  transition: all 2.5s ease;
+}
+
+.fly-in-text li: last-child {
+  margin-left: 0;
+}
+
+.fly-in-text.hidden li {
+  opacity: 0;
+}
+
+.fly-in-text.hidden li:nth-child(1) {
+  transform: translateX(-200px) translateY(-200px);
+}
+
+.fly-in-text.hidden li:nth-child(2) {
+  transform: translateX(20px) translateY(100px);
+  color: transparent;
+}
+
+.fly-in-text.hidden li:nth-child(3) {
+  transform: translateX(-150px) translateY(-80px);
+}
+
+.fly-in-text.hidden li:nth-child(4) {
+  transform: translateX(10px) translateY(-200px);
+}
+
+.fly-in-text.hidden li:nth-child(5) {
+  transform: translateX(-300px) translateY(200px);
+}
+
+.fly-in-text.hidden li:nth-child(6) {
+  transform: translateX(-20px) translateY(-20px);
+}
+
+.fly-in-text.hidden li:nth-child(7) {
+  transform: translateX(30px) translateY(200px);
+}
+
+.fly-in-text.hidden li:nth-child(8) {
+  transform: translateX(20px) translateY(-200px);
+}
+
+.fly-in-text.hidden li:nth-child(9) {
+  transform: translateX(-150px) translateY(50px);
+}
+
+.fly-in-text.hidden li:nth-child(10) {
+  transform: translateX(100px) translateY(20px);
+}
+
+.fly-in-text.hidden li:nth-child(11) {
+  transform: translateX(200px) translateY(-300px);
+}
+
+.fly-in-text.hidden li:nth-child(12) {
+  transform: translateX(-80px) translateY(-150px);
+}
+
+.fly-in-text.hidden li:nth-child(13) {
+  transform: translateX(30px) translateY(100px);
+}
+
 html {
     scroll-behavior: smooth
 }
 
 #loader{
-    height: 1800px;
-    width: 1500px;
-    background-color: coral;
-    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5) ;
+    position: absolute;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
     z-index: 999;
 }
 #loader img{
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
+
 /*----------------PARALLAX IMAGE-----------------*/
 .parallax {
 	min-height: 350px;
@@ -48,6 +137,7 @@ header {
 /*----------------navigation container-----------------*/
 .nav-container {
   margin: 0 auto;
+  border-radius: 10%;
 }
 
 /*----------------text-based logo-----------------*/
@@ -131,29 +221,30 @@ a.text:hover, a.text:active {
     color: black;
 }
 .row a{
-	color: #1e1f32;
+	color: #ffffff;
     font-family: "Raleway",sans-serif;
     text-transform: uppercase;
     padding: .5rem 1rem;
-    padding-right: 2rem;
-    border-radius: 30px;
+    padding-right: 1rem;
+    border-radius: 13%;
     margin: 40px auto;
     text-align: center;
     position: relative;
     display: block;
-    width: 175px;
+    width: 110px;
     letter-spacing: .3px;
     font-size: 16px;
     font-weight: 600;
     line-height: initial;
-    background: url(img/arrow.png) #a2ffe8;
-    background-size: 40px;
+    background:  -webkit-linear-gradient(right,#D4D400,#28C761,#024709)  ;
+    background-size: 189px;
     background-repeat: no-repeat;
-    background-position: 96%;
+    background-position: 50%;
 	text-decoration: none;
 }
 .row a:hover{
-	    background-color: #f0f;
+	    background-color: -webkit-linear-gradient(right,#D4D400,#28C761,#024709); 
+     background-size: 40px;
     color: initial;
 	    text-decoration: none;
     transition: all 0.3s ease-in 0s;
@@ -162,6 +253,35 @@ a.text:hover, a.text:active {
 
 /*If device width is less than or equal to 800px, then do ...*/
 @media only screen and (max-width: 800px) {
+
+/*--second thing--*/
+.fly-in-text {
+  list-style: none;
+  font-weight: bolder;
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.fly-in-text li {
+  display: inline-block;
+  margin-right: 1%;
+  font-family: 'montserrat', sans-serif;  
+  font-weight: bolder;
+  font-size: 60px;
+  color: white;
+  opacity: 0.9 ;
+  transition: all 2.5s ease;
+}
+    
+ #loader img{
+    position: fixed;
+    width: 300px;
+    height: 200px;
+    
+}
+
 
     h2 {
         font-size: 35px !important;
@@ -173,7 +293,7 @@ a.text:hover, a.text:active {
   }
   nav {
     width: 100%;
-    padding: 0px 0 15px;
+    
   }
   nav ul {
     display: none;
@@ -182,10 +302,10 @@ a.text:hover, a.text:active {
     float: none;
   }
   nav ul li a {
-    padding: 15px;
+    padding: 10px;
     line-height: 20px;
     background-color: white;
-    opacity: 0.75;
+    opacity: 0.80;
   }
   nav ul li ul li a {
     padding-left: 30px;
@@ -291,14 +411,20 @@ article {
 
 h1 {
 	font-family: "montserrat",sans-serif;
-    line-height: 1.5;
-	text-transform: uppercase;
-	font-size: 16px;
-    color: lightgray;
+    text-align: center;
+    font-size: 55px  !important;;
+    text-transform: uppercase;
+    font-weight: 2000;
+    color: #FF0CFF;
+    background: -webkit-linear-gradient(right,#B8BABA,white,#B8BABA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    line-height: initial;
 }
 
 h2 {
-	font-family: 'raleway',sans-serif;
+	font-family: 'montserrat',sans-serif;
     text-align: center;
     font-size: 55px;
     text-transform: uppercase;
@@ -315,61 +441,10 @@ p {
 	line-height: 1.5;
 }
 
-/*----------------SLIDESHOW-----------------*/
-
-#slider {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  z-index: 1;
-  position: relative;        
-}
-
-/* prev / next links */
-.cycle-prev, .cycle-next { 
-  position: absolute;
-  top: 0;
-  width: 30%;
-  opacity: 0;
-  filter: alpha(opacity=5);
-  z-index: 800;
-  height: 100%;
-  cursor: pointer; 
-  }
-  
-.cycle-prev { 
-  left: 0;
-  background: url(img/apr.png) 50% 50% no-repeat;
-  }
-  
-.cycle-next { 
-right: 0;
-background: url(img/anx.png) 50% 50% no-repeat;
-}
-
-.cycle-prev:hover, .cycle-next:hover { 
-opacity: 1;
-filter: alpha(opacity=50)
-}
-
-
-/* captions below slideshow*/
-#alt-caption {
-    background-color: transparent;
-    color: #ffffff;
-    font-family: 'montserrat', sans-serif;
-    font-size: .9em;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 /*----------------VIDEO-----------------*/
 video {
     position: relative;
-    width: 100%;    
+    width: 80%;    
 }
 
 /*----------------FOOTER-----------------*/
@@ -419,13 +494,14 @@ footer a:hover {
 }
 
 /*--------------background colors----------*/
+.frontness{
+    background-image: linear-gradient(#7537a2,#927DFF, #927DFF,#927DFF,#927DFF,#927DFF,#927DFF,#927DFF,#927DFF,#7537a2);
+}
+
 .backness {
 	background-image: linear-gradient(#B8BABA,white, white,white,white,white,white, white,white, #B8BABA);
 }
 
-.blueBG {
-	background: -webkit-linear-gradient(left,black,grey,white);
-}
 
 .videoness {
 	background-image: linear-gradient(to bottom right, #FF9785, #FF3210);
@@ -434,23 +510,24 @@ footer a:hover {
 /*----------------back to top button-----------------*/
 #myBtn {
   
+  Color: white;
   position: fixed; /* Fixed/sticky position */
   bottom: 20px; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: #eb3660; /* Set a background color */
-  color: black; /* Text color */
+  background-color: #9a88f6; /* Set a background color */
+  /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 15px; /* Rounded corners */
+  padding: 6px; /* Some padding */
+  border-radius: 9px; /* Rounded corners */
   font-family: 'raleway', sans-serif;
-  font-size: 10px; /* Increase font size */
+  font-size: 25px; /* Increase font size */
 }
 
 #myBtn:hover {
-  background-color: #9a88f6;
+  background-color: #eb3660;
   opacity: 0.85;   
 }
 
@@ -458,3 +535,60 @@ footer a:hover {
 .nav-up {
   top: -105px; 
 }
+
+/*----------------SLIDESHOW-----------------*/
+
+#slider {
+  margin-left: auto;
+  margin-right: auto;
+  width:80%;
+  z-index: 1;
+  position: relative;        
+}
+
+/* prev / next links */
+.cycle-prev, .cycle-next { 
+  position: absolute;
+  top: 0;
+  width: 30%;
+  opacity: 0;
+  filter: alpha(opacity=5);
+  z-index: 800;
+  height: 100%;
+  cursor: pointer; 
+  }
+  
+.cycle-prev { 
+  left: 0;
+  background: url(img/apr.png) 50% 50% no-repeat;
+  }
+  
+.cycle-next { 
+right: 0;
+background: url(img/anx.png) 50% 50% no-repeat;
+}
+
+.cycle-prev:hover, .cycle-next:hover { 
+opacity: 1;
+filter: alpha(opacity=50)
+}
+
+
+/* captions below slideshow*/
+#alt-caption {
+    background-color: transparent;
+    color: #ffffff;
+    font-family: 'montserrat', sans-serif;
+    font-size: .9em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+#ssimg {
+    border-radius: 15%
+}
+
